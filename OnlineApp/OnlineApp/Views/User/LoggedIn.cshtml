@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+    @{
+        ViewBag.Title = "LoggedIn";
+    }
+
+    @if (Session["UserId"] != null)
+    {
+        <h4>Hello @Session["UserName"].ToString()</h4>
+        @Html.ActionLink("View Course", "ViewCourse", "Course")
+        <br>
+        @Html.ActionLink("View your Courses", "ViewUrCourse", "Course")
+        <br>
+    }
+    <div>
+        @Html.ActionLink("Logoff", "Login", "User", new { Style = "color:Red" })
+    </div>
+    <style>
+        body {
+            background-image: url('https://www.theselfemployed.com/wp-content/uploads/2016/09/ecommerce-sales.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            opacity: 1.5;
+            text-align: center;
+            color: black;
+            font-weight: bolder;
+        }
+    </style>
+</body>
+</html>

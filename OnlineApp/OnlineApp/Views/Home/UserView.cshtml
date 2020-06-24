@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+    @{
+        ViewBag.Title = "UserView";
+    }
+
+    <h2>UserView</h2>
+
+    @if (ViewBag.Message != null)
+    {
+<div class="form-group">
+    <div class="col-md-10">@ViewBag.Message</div>
+    <br />
+</div>
+    }
+
+
+<div>
+    @Html.ActionLink("Login", "Login", "User")
+    <br />
+</div>
+    <div>
+        @Html.ActionLink("Register", "Register", "User")
+    </div>
+    <style>
+        body {
+            background-image: url('https://www.theselfemployed.com/wp-content/uploads/2016/09/ecommerce-sales.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            opacity:1.5;
+            text-align: center;
+            color: black;
+            font-weight: bolder;
+        }
+    </style>
+</body>
+</html>

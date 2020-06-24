@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+    @model IEnumerable<OnlineApp.Models.Users>
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>Index</h2>
+    <p>
+        @Html.ActionLink("Create New", "Register")
+    </p>
+
+
+
+    <table class="table">
+        <tr>
+            <th>
+
+                @Html.DisplayNameFor(Users => Users.UserId)
+            </th>
+
+            <th>
+
+                @Html.DisplayNameFor(Users => Users.UserName)
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => item.UserId)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(m => item.UserName)
+                </td>
+            </tr>
+
+        }
+    </table>
+    
+    <style>
+        body {
+            background-image: url('https://www.theselfemployed.com/wp-content/uploads/2016/09/ecommerce-sales.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            opacity: 1.5;
+            text-align: center;
+            color: black;
+            font-weight: bolder;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th {
+            text-align: left;
+            padding: 8px;
+            background-color: mediumseagreen;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: lightseagreen ;
+            color: black;
+        }
+
+        tr:nth-child(odd) {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</body>
+</html>

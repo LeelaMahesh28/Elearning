@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+
+<body>
+    @model OnlineApp.Models.Course
+    @{
+        ViewBag.Title = "SchedDate";
+    }
+
+    <h2>SchedDate</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @if (ViewBag.Message != null)
+            {
+                <div class="form-group">
+                    <div class="col-md-10">@ViewBag.Message</div>
+                </div>
+            }
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CourseId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CourseId, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("Schedule", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBox("ScheduleDate", "", new { @class = "form-control" })
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="SchedDate" class="btn btn-default" />
+                </div>
+            </div>
+            <div>
+                @Html.ActionLink("Logoff", "Login", "User")
+            </div>
+            <div>
+                @Html.ActionLink("QR Code", "Index", "QRCodeGenerator")
+            </div>
+        </div>
+
+    }
+    <style>
+        body {
+            background-image: url('https://learningforward.org/wp-content/uploads/2020/04/05-07-webinar-thumbnail-II-350x292-1-300x250.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            opacity: 1.5;
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+            font-family: cursive;
+        }
+
+        input[type=submit] {
+            background-color: crimson;
+            border: 2px solid;
+            color: black;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            font-family: cursive;
+        }
+
+            input[type=submit]:hover {
+                background-color: crimson;
+                color: black;
+            }
+    </style>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</body>
+</html>
